@@ -22,6 +22,7 @@ class App extends React.Component {
     firebaseDb
       .database()
       .ref('main/company')
+      .child('company10@gmail-com')
       .on('value', (snapshot) => {
         let company = []
         snapshot.forEach((snap) => {
@@ -67,8 +68,8 @@ class App extends React.Component {
             <thead class="thead-dark">
               <tr>
                 <th>company</th>
-                <th>category</th>
-                <th>description</th>
+                {/* <th>category</th>
+                <th>description</th> */}
               </tr>
             </thead>
             <tbody>
@@ -76,8 +77,8 @@ class App extends React.Component {
                 return (
                   <tr>
                     <td>{data.uname}</td>
-                    <td>{data.cat}</td>
-                    <td>{data.desc}</td>
+                    {/* <td>{data.cat}</td>
+                    <td>{data.desc}</td> */}
                   </tr>
                 )
               })}
