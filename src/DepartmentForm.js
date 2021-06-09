@@ -38,9 +38,7 @@ const DepartmentForm = (props) => {
     props.add(values)
   }
 
-  return (
-
-    
+  return (   
     <form autoComplete="off" onSubmit={handleFormSubmit}>
       <div className="signupContainer">
         <div>
@@ -53,7 +51,6 @@ const DepartmentForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-
         <div>
           <input 
             className="form-control"
@@ -74,7 +71,6 @@ const DepartmentForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-
         <div>
           <input
             className="form-control"
@@ -156,9 +152,6 @@ const DepartmentForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-
-        
-
         <div className="form-group">
           <input
             type="submit"

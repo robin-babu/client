@@ -40,60 +40,47 @@ class App extends React.Component {
     )
   }
 
-  // Dept = ({ adddepartment }) => {
-  //   return (
-  //     <button onClick={adddepartment}>
-  //       <Link to="/"> Add department</Link>
-  //     </button>
-  //   )
-  // }
-
   render() {
     return (
       <div className="MainDiv">
-        <div class="description">
-          <h2>
-            <center><b>{this.state.company[1]}</b> </center>
-          </h2>
-          <br></br>
-          <br></br>
-        </div>
-
+        <a className="adddept" href={'/Department'}>
+          <center>Add department</center>
+        </a>
+        {this.Hero(this.props.handleLogout)}
+        <h2>
+          <center><b>{this.state.company[1]}</b> </center>
+        </h2>
         <div className="container">
+          <br></br>
+          <br></br>
           <center>{this.state.company[3]}</center>
+          <br></br>
+          <div class="description">
+            <div className="deptable">
+              <table id="example" class="display table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th><center>department</center></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <center>
+                      {console.log(this.state.company)}
+                      {this.state.company.length > 0 &&
+                        Object.keys(this.state.company[2]).map((d) => (
+                          <div className="dep">
+                            <a href={'/' + d}>{d}</a>
+                          </div>
+                        ))}
+                    </center>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-        <br></br>
-        <br></br>
-        <div className="deptable">
-          <table id="example" class="display table">
-            <thead class="thead-dark">
-              <tr>
-                <th><center>department</center></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <center>
-                  {console.log(this.state.company)}
-                  {this.state.company.length > 0 &&
-                    Object.keys(this.state.company[2]).map((d) => (
-                      <div className="dep">
-                        <a href={'/' + d}>{d}</a>
-                      </div>
-                    ))}
-                </center>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <a className="adddept" href={'/Department'}>
-            <center>Add department</center>
-          </a>
-
-          {this.Hero(this.props.handleLogout)}
-        </div>
-        </div>
+      </div>
     )
   }
 }

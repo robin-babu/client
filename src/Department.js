@@ -7,9 +7,7 @@ import { useHistory } from 'react-router-dom'
 const Department = () => {
   var [currentId, setCurrentId] = useState('')
   var [contactObjects, setContactObjects] = useState({})
-
   const history = useHistory()
-
   //Once components load complete
   useEffect(() => {
     firebaseDb
@@ -25,8 +23,7 @@ const Department = () => {
       })
   }, [])
 
-  const add = (obj) => {
-   
+  const add = (obj) => {   
       const a = obj.email
       const b = a.replace(/[.]/g, '-')
       console.log(obj)
@@ -43,14 +40,10 @@ const Department = () => {
         nextavailabletoken: parseInt(obj.nextavailabletoken) ,
         st:  `${obj.st}`,
       }
-
       const Credentials = {
         companyID: `${obj.email}`,
-        depID: `${obj.name}`,
-        
-        
+        depID: `${obj.name}`,       
       }
-
       firebaseDb
         .database()
         .ref()
@@ -59,7 +52,7 @@ const Department = () => {
           if (err) console.log(err)
           else setCurrentId('')
         })
-      // .auth()
+
       firebaseDb
       .database()
       .ref()
@@ -68,19 +61,13 @@ const Department = () => {
         if (err) console.log(err)
         else setCurrentId('')
       })
-      
-    
   }
 
   return (
     <>
-      <div className="row">
-       
+      <div className="row">       
           <DepartmentForm {...{ currentId, contactObjects, add }}></DepartmentForm>
-
-         
-        </div>
-    
+        </div>    
     </>
   )
 }

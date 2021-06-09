@@ -13,16 +13,6 @@ import DepartmentForm from './DepartmentForm'
 
 
 function App() {
-  //   return (
-  //     <div className="row">
-  //       <div className="col-md-8 offset-md-2">
-  //         <Signup ></Signup>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
-  // const App = () => {
 
   const history = useHistory()
   const [user, setUser] = useState('')
@@ -91,15 +81,9 @@ function App() {
             passwordError={passwordError}
           />
         </Route>
-        <Route exact path="/Signup">
-          <Signup />
-        </Route>
-        <Route exact path="/welcome">
-          <Hero handleLogout={handleLogout}></Hero>
-          {/* <Hero></Hero> */}
-        </Route>
-        <Route exact path="/dep1"><Dep1/></Route>
-        
+        <Route exact path="/Signup"><Signup /></Route>
+        <Route exact path="/welcome"><Hero handleLogout={handleLogout}/></Route>
+        <Route exact path="/dep1"><Dep1/></Route>       
         <Route exact path="/Department"><Department/></Route>
         <Route exact path="/DepartmentForm"><DepartmentForm/></Route>
       </Switch>

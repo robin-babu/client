@@ -7,9 +7,7 @@ import { useHistory } from 'react-router-dom'
 const Signup = () => {
   var [currentId, setCurrentId] = useState('')
   var [contactObjects, setContactObjects] = useState({})
-
   const history = useHistory()
-
   //Once components load complete
   useEffect(() => {
     firebaseDb
@@ -47,7 +45,6 @@ const Signup = () => {
           if (err) console.log(err)
           else setCurrentId('')
         })
-      // .auth()
 
       firebaseDb
         .auth()
@@ -57,16 +54,6 @@ const Signup = () => {
         })
         .catch((err) => {
           console.log(err)
-
-          // switch (err.code) {
-          //   case 'auth/email-already-in-use':
-          //   case 'auth/invalid-email':
-          //     setEmailError(err.message)
-          //     break
-          //   case 'auth/weak-password':
-          //     setPasswordError(err.message)
-          //     break
-          // }
         })
     }
   }
@@ -76,10 +63,7 @@ const Signup = () => {
       <div className="row">
        
           <SignupForm {...{ currentId, contactObjects, add }}></SignupForm>
-
-          {/* <ContactForm {...{ add }}></ContactForm> */}
-        </div>
-    
+        </div>   
     </>
   )
 }

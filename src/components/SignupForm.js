@@ -37,7 +37,7 @@ const SignupForm = (props) => {
 
   return (
     <form autoComplete="off" onSubmit={handleFormSubmit}>
-      <div className="signupContainer">
+      <div className="deptSignupContainer">
         <div>
           <input
             className="form-control"

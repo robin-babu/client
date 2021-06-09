@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom'
 
 const Login = (props) => {
   const history = useHistory()
-
   const {
     email,
     setEmail,
@@ -16,7 +15,6 @@ const Login = (props) => {
     emailError,
     passwordError,
   } = props
-
   const onemailchange = (e) => {
     setEmail(e.target.value)
     localStorage.setItem('user', e.target.value)
@@ -24,7 +22,6 @@ const Login = (props) => {
   const tosignup = () => {
     history.push('/Signup')
   }
-
   const [confirmPassword, setConfirmPassword] = useState('')
   const onTextChanged = (event) => {
     setPassword(event.target.value)
