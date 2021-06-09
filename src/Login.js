@@ -17,6 +17,10 @@ const Login = (props) => {
     passwordError,
   } = props
 
+  const onemailchange = (e) => {
+    setEmail(e.target.value)
+    localStorage.setItem('user', e.target.value)
+  }
   const tosignup = () => {
     history.push('/Signup')
   }
@@ -40,7 +44,7 @@ const Login = (props) => {
           autoFocus
           required
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={onemailchange}
         />
         <p className="errorMsg">{emailError}</p>
         <label>Password</label>

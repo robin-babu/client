@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
 
-const SignupForm = (props) => {
+const DepartmentForm = (props) => {
   const initialFieldValues = {
-    cat: '',
-    mobNo: '',
+    activenow: '',
+    avgt: '',
     email: '',
-    desc: '',
-    mapLink: '',
-    company: '',
-    password: '',
-    confirmpassword: '',
+    currenttoken: '',
+    descript: '',
+    et: '',
+    ogDeptname: '',
+    maxtokens: '',
+    name:'',
+    nextavailabletoken:'',
+    st:''
   }
 
   var [values, setValues] = useState(initialFieldValues)
@@ -36,14 +39,38 @@ const SignupForm = (props) => {
   }
 
   return (
+
+    
     <form autoComplete="off" onSubmit={handleFormSubmit}>
       <div className="signupContainer">
         <div>
           <input
+            type="boolean"
             className="form-control"
-            name="cat"
-            placeholder="Category"
-            value={values.cat}
+            name="activenow"
+            placeholder="Active Now"
+            value={values.activenow}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div>
+          <input 
+            className="form-control"
+            
+            name="avgt"
+            placeholder="AVGT"
+            value={values.avgt}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <input
+            className="form-control"
+            name="currenttoken"
+            type="number"
+            placeholder="current token"
+            value={values.currenttoken}
             onChange={handleInputChange}
           />
         </div>
@@ -51,38 +78,19 @@ const SignupForm = (props) => {
         <div>
           <input
             className="form-control"
-            name="company"
-            placeholder="Company name"
-            value={values.company}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <input
-            className="form-control"
-            name="mobNo"
-            placeholder="Mobile"
-            value={values.mobNo}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        <div>
-          <input
-            className="form-control"
-            name="mapLink"
-            placeholder="Location"
-            value={values.mapLink}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        <div>
-          <input
-            className="form-control"
-            name="desc"
+            name="descript"
             placeholder="Description"
-            value={values.desc}
+            value={values.descript}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div>
+          <input
+            className="form-control"
+            name="et"
+            placeholder="et"
+            value={values.et}
             onChange={handleInputChange}
           />
         </div>
@@ -96,28 +104,60 @@ const SignupForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-
         <div>
           {' '}
           <input
             className="form-control"
-            name="password"
-            placeholder="Password"
-            value={values.password}
+            name="maxtokens"
+            type="number"
+            placeholder="Max Tokens"
+            value={values.maxtokens}
             onChange={handleInputChange}
           />
         </div>
-
         <div>
           {' '}
           <input
             className="form-control"
-            name="confirmpassword"
-            placeholder="Confirm Password"
-            value={values.confirmpassword}
+            name="name"
+            placeholder="Name"
+            value={values.name}
             onChange={handleInputChange}
           />
         </div>
+        <div>
+          {' '}
+          <input
+            className="form-control"
+            name="onDeptname"
+            placeholder="onDeptName"
+            value={values.onDeptname}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          {' '}
+          <input
+            className="form-control"
+            name="st"
+            placeholder="st"
+            value={values.st}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          {' '}
+          <input
+            className="form-control"
+            name="nextavailabletoken"
+            type="number"
+            placeholder="Next Available Token"
+            value={values.nextavailabletoken}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        
 
         <div className="form-group">
           <input
@@ -128,7 +168,8 @@ const SignupForm = (props) => {
         </div>
       </div>
     </form>
+    
   )
 }
 
-export default SignupForm
+export default DepartmentForm
