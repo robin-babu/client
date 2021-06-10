@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import depsignup from './Depsignup'
 // import './App.css';
 //Calling Bootstrap 4.5 css
 import 'bootstrap/dist/css/bootstrap.min.css'
